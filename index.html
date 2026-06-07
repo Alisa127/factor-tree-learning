@@ -248,7 +248,9 @@ function updateResult(){
    result.innerHTML='🟨 เติมตัวเลขในช่อง ? ของแต่ละกิ่ง';
    return;
  }
- let f=leaves(root).sort((a,b)=>a-b);
+ let f = leaves(root)
+    .filter(n => n !== 1)
+    .sort((a,b)=>a-b);
  result.innerHTML='✅ สำเร็จ<br><br>'+root.value+' = '+f.join(' × ');
  restartBtn.classList.remove('hidden');
 }
